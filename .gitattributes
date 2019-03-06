@@ -2,6 +2,7 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
+SFML-2.5.1/* linguist-vendored
 
 ###############################################################################
 # Set default behavior for command prompt diff.
