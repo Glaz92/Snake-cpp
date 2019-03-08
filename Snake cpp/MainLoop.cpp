@@ -30,6 +30,7 @@ void MainLoop::mainLoop()
 
 		GetWindow().clear(backgroundColor);
 		draw();
+		game.run();
 		GetWindow().display();
 	}
 }

@@ -19,13 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainLoop.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="SnakeSegment.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConstElements.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="MainLoop.h" />
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="SnakeSegment.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

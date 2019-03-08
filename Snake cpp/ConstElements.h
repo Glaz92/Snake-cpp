@@ -8,3 +8,6 @@ constexpr int snakeSegmentSize = 20;
 const auto gameBoardBorderColor = sf::Color::Black;
 const auto gameBoardFillColor = sf::Color::White;
 const auto backgroundColor = sf::Color::White;
+
+const auto snakeFillColor = sf::Color::Red;
+const auto snakeOutlineColor = sf::Color::Black;
