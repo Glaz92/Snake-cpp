@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game()
-	: gameSpeed(350)
+	: gameSpeed(gameSpeedStart), score(0)
 {
 }
 
@@ -19,6 +19,7 @@ void Game::run()
 void Game::draw()
 {
 	snake.draw();
+	apple.draw();
 }
 
 void Game::logic()
@@ -29,6 +30,13 @@ void Game::logic()
 	{
 		snake.move();
 		clock.restart();
+
+		if (snake.eatApple(apple))
+		{
+			score += 100;
+			gameSpeed = gameSpeedStart - score / 100 * 25;
+			gameSpeed = gameSpeed < 100 ? 100 : gameSpeed;
+		}
 	}
 }
 

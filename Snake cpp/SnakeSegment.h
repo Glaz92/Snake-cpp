@@ -4,10 +4,11 @@
 
 class SnakeSegment
 {
-private:
+protected:
 	sf::RectangleShape segment;
 
 public:
+	SnakeSegment();
 	SnakeSegment(sf::Vector2f position);
 	~SnakeSegment();
 

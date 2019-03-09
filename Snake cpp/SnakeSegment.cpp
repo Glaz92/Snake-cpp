@@ -2,6 +2,14 @@
 #include "Window.h"
 #include "ConstElements.h"
 
+SnakeSegment::SnakeSegment()
+	: segment(sf::Vector2f(snakeSegmentSize - 2, snakeSegmentSize - 2))
+{
+	segment.setOutlineThickness(2);
+	segment.setFillColor(snakeFillColor);
+	segment.setOutlineColor(snakeOutlineColor);
+}
+
 SnakeSegment::SnakeSegment(sf::Vector2f position)
 	: segment(sf::Vector2f(snakeSegmentSize-2,snakeSegmentSize-2))
 {

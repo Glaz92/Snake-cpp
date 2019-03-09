@@ -1,7 +1,10 @@
 #include "Window.h"
+#include "ConstElements.h"
 
 Window::Window()
-	: window(sf::VideoMode(800, 600, 32), "Tetris", sf::Style::Default)
+	: window(sf::VideoMode(snakeSegmentSize * 2 + snakeSegmentSize * gameBoardWidth, snakeSegmentSize * 2 + snakeSegmentSize * gameBoardHeight, 32), 
+		     "Tetris", 
+		     sf::Style::Default)
 {
 }
 
