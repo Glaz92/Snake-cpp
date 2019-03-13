@@ -8,7 +8,6 @@ Window::Window()
 {
 }
 
-
 Window::~Window()
 {
 }

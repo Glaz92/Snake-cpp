@@ -13,6 +13,8 @@ private:
 	bool dirChanged;
 	bool grow;
 
+	bool snakeIsDead;
+
 public:
 	Snake();
 	~Snake();
@@ -23,4 +25,5 @@ public:
 	void setDirection(Direction newDir);
 
 	bool eatApple(Apple & apple);
+	bool isDead();
 };

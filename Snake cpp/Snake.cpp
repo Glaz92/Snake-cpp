@@ -7,7 +7,8 @@ Snake::Snake()
 			 SnakeSegment(sf::Vector2f(snakeSegmentSize * 10, snakeSegmentSize * 10))},
 	dir(Direction::Left),
 	dirChanged(false),
-	grow(false)
+	grow(false),
+	snakeIsDead(false)
 {
 }
 
@@ -41,7 +42,8 @@ void Snake::move()
 	if (grow) grow = false; 
 	else snake.pop_back();
 
-	newSegment.checkCollision(snake);
+	if (newSegment.checkCollision(snake))
+		snakeIsDead = true;
 	snake.push_front(newSegment);
 }
 
@@ -86,4 +88,9 @@ bool Snake::eatApple(Apple & apple)
 	}
 
 	return grow;
+}
+
+bool Snake::isDead()
+{
+	return snakeIsDead;
 }

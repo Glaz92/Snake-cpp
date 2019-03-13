@@ -15,6 +15,11 @@ private:
 	int gameSpeed;
 	int score;
 
+	bool pause;
+	bool gameOver;
+
+	sf::RectangleShape frame;
+
 public:
 	Game();
 	~Game();
