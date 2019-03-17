@@ -3,7 +3,7 @@
 
 int main()
 {
-	//font.loadFromFile("data/font/font.ttf");
+//	font.loadFromFile("data/font/font.ttf");
 	MainLoop mainLoop;
 	
 	mainLoop.mainLoop();

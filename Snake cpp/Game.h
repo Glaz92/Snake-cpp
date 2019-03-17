@@ -18,6 +18,9 @@ private:
 	bool pause;
 	bool gameOver;
 
+	sf::Text pauseTxt;
+	sf::Text gameOverTxt;
+
 	sf::RectangleShape frame;
 
 public:

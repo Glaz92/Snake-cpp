@@ -4,13 +4,19 @@
 
 Game::Game()
 	: gameSpeed(gameSpeedStart), score(0), pause(false), gameOver(false),
-	  frame(sf::Vector2f(150,100))
+	  frame(sf::Vector2f(150,100)), pauseTxt("Pause", GetFont(), 30), gameOverTxt("Game Over", GetFont(), 25)
 {
 	frame.setOutlineThickness(snakeSegmentSize / 2);
 	frame.setOutlineColor(gameBoardBorderColor);
 	frame.setFillColor(gameBoardFillColor);
 	frame.setOrigin(75,50);
 	frame.setPosition(snakeSegmentSize + snakeSegmentSize * gameBoardWidth / 2, snakeSegmentSize + snakeSegmentSize * gameBoardHeight / 2);
+
+	pauseTxt.setPosition(frame.getGlobalBounds().left + 45, frame.getGlobalBounds().top + 35);
+	pauseTxt.setFillColor(sf::Color::Black);
+
+	gameOverTxt.setPosition(frame.getGlobalBounds().left + 20, frame.getGlobalBounds().top + 20);
+	gameOverTxt.setFillColor(sf::Color::Black);
 }
 
 Game::~Game()
@@ -29,6 +35,8 @@ void Game::draw()
 	snake.draw();
 	apple.draw();
 	if (pause || gameOver) GetWindow().draw(frame);
+	if (pause) GetWindow().draw(pauseTxt);
+	if (gameOver) GetWindow().draw(gameOverTxt);
 }
 
 void Game::logic()
@@ -49,7 +57,10 @@ void Game::logic()
 	}
 
 	if (snake.isDead())
+	{
 		gameOver = true;
+		gameOverTxt.setString("Game over\nscore:" + std::to_string(score));
+	}
 }
 
 void Game::control()

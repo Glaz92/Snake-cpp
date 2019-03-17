@@ -11,3 +11,27 @@ const auto backgroundColor = sf::Color::White;
 
 const auto snakeFillColor = sf::Color::Red;
 const auto snakeOutlineColor = sf::Color::Black;
+
+class Font
+{
+private:
+	sf::Font font;
+
+private:
+	Font()
+	{
+		font.loadFromFile("data/font/font.ttf");
+	}
+
+	~Font() {}
+
+public:
+	static sf::Font & getFont()
+	{
+		static Font font;
+
+		return font.font;
+	}
+};
+
+constexpr auto GetFont = Font::getFont;

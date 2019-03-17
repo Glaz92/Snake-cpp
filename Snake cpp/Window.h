@@ -6,7 +6,7 @@ class Window
 private:
 	sf::RenderWindow window;
 
-public:
+private:
 	Window();
 	~Window();
 
